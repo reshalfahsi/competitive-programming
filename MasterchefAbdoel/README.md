@@ -12,7 +12,7 @@ Baris 2 adalah jumlah maksimum masing-masing jenis bahan baku yang tersedia **to
 
 **N** baris berikutnya adalah jumlah masing-masing jenis bahan baku untuk membuat menu makanan **A[i]**, **B[i]**, **C[i]** dan keuntungan menu makanan **P[i]** yang dipisahkan dengan spasi.
 
-## Constraints
+### Constraints
 
 ~~~
 1 <= N <= 20
@@ -60,4 +60,4 @@ Maka, keuntungan maksimal adalah ketika memasak menu kedua dan ketiga dengan keu
 
 ## Hint
 
-This problem can be solved using Dynamic Programming. It is a knapsack multidimensional problem.
+This problem can be solved using [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming). It is a multidimensional [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem).
