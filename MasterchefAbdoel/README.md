@@ -60,4 +60,4 @@ Maka, keuntungan maksimal adalah ketika memasak menu kedua dan ketiga dengan keu
 
 ## Hint
 
-This problem can be solved using Dynamic Programming.
+This problem can be solved using Dynamic Programming. It is a knapsack multidimensional problem.
