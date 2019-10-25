@@ -5,7 +5,7 @@
 #include <sstream>
 #include <map>
 
-#define INIT_VALUE -1
+#define INIT_VALUE -1;
 
 typedef struct {
     int maxA;
@@ -23,17 +23,17 @@ std::map<std::string, int> memo;
 int N, K;
 int totA, totB, totC;
 
-std::string generate_key(int a, int b, int c, int cost, int prev, int prev_k){
+std::string generate_key(int a, int b, int c, int cost){
     
     std::stringstream ss;
     std::string ret;
-    ss << a << '|' << b << '|' << c << '|' << cost << '|' << prev << '|' << prev_k;
+    ss << a << '|' << b << '|' << c << '|' << cost;
     ret = ss.str();
     return ret;
     
 }
 
-int cook(int a, int b, int c, int cost, int prev, int prev_k, int choosen[]){
+int cook(int a, int b, int c, int cost, int choosen[]){
    
     int ret;
     int max = INIT_VALUE;
@@ -42,7 +42,7 @@ int cook(int a, int b, int c, int cost, int prev, int prev_k, int choosen[]){
     for(int n = 0; n<N; n++)
         cpy_choosen[n] = choosen[n];
     
-    auto key = generate_key(a, b, c, cost, prev, prev_k);
+    auto key = generate_key(a, b, c, cost);
     
     if(memo[key] != 0) return memo[key];
    
@@ -52,7 +52,7 @@ int cook(int a, int b, int c, int cost, int prev, int prev_k, int choosen[]){
         auto C = c-menu[i].maxC;
         if(choosen[i]<K && A>=0 && B>=0 && C>=0){
             cpy_choosen[i]++;
-            ret = (cook(A, B, C, cost + menu[i].cost, i, cpy_choosen[i], cpy_choosen));
+            ret = (cook(A, B, C, cost + menu[i].cost, cpy_choosen));
         }
         else if(choosen[i] >= K || 
                 (A < 0 || B < 0 || C < 0) ){
@@ -88,5 +88,5 @@ int main(){
     int choosen[N];
     for(int i=0; i<N; i++)
         choosen[i] = 0;
-    std::cout << cook(totA, totB, totC, 0, INIT_VALUE, INIT_VALUE, choosen) << std::endl;    
+    std::cout << cook(totA, totB, totC, 0, choosen) << std::endl;    
 }
