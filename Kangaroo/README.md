@@ -9,7 +9,7 @@ You have to figure out a way to get both kangaroos at the same location at the s
 
 For example, kangaroo **1** starts at **x1 = 2** with a jump distance **v1 = 1** and kangaroo **2** starts at **x2 = 1** with a jump distance of **v2 = 2**. After one jump, they are both at **x = 3**, **(x1 + v1 = 2 + 1, x2 + v2 = 1 + 2)**, so our answer is YES.
 
-# Function Description
+### Function Description
 Complete the function kangaroo in the editor below. It should return YES if they reach the same position at the same time, or NO if they don't.
 
 kangaroo has the following parameter(s):
@@ -17,17 +17,17 @@ kangaroo has the following parameter(s):
 * x1, v1: integers, starting position and jump distance for kangaroo 1
 * x2, v2: integers, starting position and jump distance for kangaroo 2 
 
-## Input Format
+### Input Format
 
 A single line of four space-separated integers denoting the respective values of **x1**, **x2**, **v1**, and **v2**
 
 ### Constraints
 
-* **0** <u><</u> **x1** **<** **x2** <u><</u> **10000**
-* **1** <u><</u> **v1** <u><</u> **10000**
-* **1** <u><</u> **v2** <u><</u> **10000**
+* **0** <ins><</ins> **x1** **<** **x2** <ins><</ins> **10000**
+* **1** <ins><</ins> **v1** <ins><</ins> **10000**
+* **1** <ins><</ins> **v2** <ins><</ins> **10000**
 
-## Output Format
+### Output Format
 
 Print YES if they can land on the same location at the same time; otherwise, print NO.
 
@@ -69,11 +69,12 @@ NO
 
 The second kangaroo has a starting location that is ahead (further to the right) of the first kangaroo's starting location (i.e., **x2 > x1**). Because the second kangaroo moves at a faster rate (meaning **v2 > v1**) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
 
-## Hint
+### Hint
 
 Count the difference every timestep, if convergence then they will meet at somepoint but if getting bigger then they will never meet ~~like you and your highschool crush~~!
 
-## Source
+### Source
 
 Hackerrank [Kangaroo](https://www.hackerrank.com/challenges/kangaroo/problem)
+
 Credits to [Okta Fajar Suryani](https://github.com/Oktafsurya)
