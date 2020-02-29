@@ -7,7 +7,7 @@ You are choreographing a circus show with various animals. For one act, you are 
 
 You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.
 
-For example, kangaroo *1* starts at *x1 = 2* with a jump distance *v1 = 1** and kangaroo *2* starts at *x2 = 1* with a jump distance of *v2 = 2*. After one jump, they are both at *x = 3*, *(x1 + v1 = 2 + 1, x2 + v2 = 1 + 2)*, so our answer is YES.
+For example, kangaroo *1* starts at *x1 = 2* with a jump distance *v1 = 1* and kangaroo *2* starts at *x2 = 1* with a jump distance of *v2 = 2*. After one jump, they are both at *x = 3*, *(x1 + v1 = 2 + 1, x2 + v2 = 1 + 2)*, so our answer is YES.
 
 ### Function Description
 Complete the function kangaroo in the editor below. It should return YES if they reach the same position at the same time, or NO if they don't.
@@ -49,7 +49,7 @@ YES
 
 The two kangaroos jump through the following sequence of locations:
 
-![alt text](kangaroo.png)
+![alt text](kangaroo_jump.png)
 
 From the image, it is clear that the kangaroos meet at the same location (number *12* on the number line) after same number of jumps (*4* jumps), and we print YES.
 
