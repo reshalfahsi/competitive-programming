@@ -25,11 +25,65 @@ The last line contains  *m*   space-separated integers *alice[j]*  , the game sc
 
 ### Constraint
 
-*  *1*  <ins><</ins>   *n*   <ins><</ins>  *2 × 10* <sup>5</sup>   
-*  *1*   <ins><</ins>   *m*   <ins><</ins>  *2 × 10* <sup>5</sup>   
-*  *0*   <ins><</ins>   *scores[i]*   <ins><</ins>  *10* <sup>9</sup>   for   *0*   <ins><</ins>  *i*  <ins><</ins>  *n*  
-*  *0*   <ins><</ins>   *alice[j]*   <ins><</ins>  *10* <sup>9</sup>   for  *0*   <ins><</ins>   *j*   <ins><</ins>  *m*    
+*  *1*  <ins><</ins>   *n*   <ins><</ins>  *2 × 10* <sup>5</sup>
+*  *1*   <ins><</ins>   *m*   <ins><</ins>  *2 × 10* <sup>5</sup>
+*  *0*   <ins><</ins>   *scores[i]*   <ins><</ins>  *10* <sup>9</sup>   for   *0*   <ins><</ins>  *i*  <ins><</ins>  *n*
+*  *0*   <ins><</ins>   *alice[j]*   <ins><</ins>  *10* <sup>9</sup>   for  *0*   <ins><</ins>   *j*   <ins><</ins>  *m*
 * The existing leaderboard,  *scores* , is in descending order.
 * Alice's scores, *alice* , are in ascending order.
 
 ### Subtask
+
+For *60%* of the maximum score:
+
+* *1* <ins><</ins> *n* <ins><</ins> *200*
+* *1* <ins><</ins> *m* <ins><</ins> *200*
+
+### Output Format
+
+Print *m* integers. The *j* <sup>th</sup> integer should indicate Alice's rank after playing the *j* <sup>th</sup> game.
+
+### Sample Input 1
+
+~~~
+7
+100 100 50 40 40 20 10
+4
+5 25 50 120
+~~~
+
+### Sample Output 1
+
+~~~
+6
+4
+2
+1
+~~~
+
+### Sample Input 2
+
+~~~
+6
+100 90 90 80 75 60
+5
+50 65 77 90 102
+~~~
+
+### Sample Output 2
+
+~~~
+6
+5
+4
+2
+1
+~~~
+
+### Hint
+Using [Binary Search](https://en.wikipedia.org/wiki/Binary_search_algorithm) to get the upper limit of the rank each games.
+
+### Source
+Hackerrank [Climbing the Leaderboard](https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem)
+
+Credits to [Okta Fajar Suryani](https://github.com/Oktafsurya)
