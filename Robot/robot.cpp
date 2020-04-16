@@ -40,7 +40,6 @@ while(T--){
 
     int l[4];
     double theta[3];
-    double denum, num;
 
     for(int i = 0; i < 4; i++)
     {
@@ -82,7 +81,7 @@ while(T--){
     for(int i = 0; i < 3; i++)
         theta[i] *= TO_DEG;
 
-    std::cout << std::setprecision(8) << theta[0] << ' ' << theta[1] << ' ' << theta[2] << std::endl;
+    std::cout << std::setprecision(8) << std::fixed << theta[0] << ' ' << theta[1] << ' ' << theta[2] << std::endl;
 
 }
 
