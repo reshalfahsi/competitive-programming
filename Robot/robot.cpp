@@ -1,81 +1,89 @@
-
-
-/* NOT FINISHED YET BUILD ERROR */
-
 #include <iostream>
 #include <vector>
+#include <cmath>
+#include <iomanip>
+#include <tuple>
 
 #define EPS 1e-6
-#define H 0.01
+#define TO_RAD (M_PI)/180.0
+#define TO_DEG 180.0/(M_PI)
 
-struct Pos2D
-{
-    double x;
-    double y;
-    
-    Pos2D(double x=0, double y=0) 
-        : x(x), y(y)
-    {
-    }
+typedef std::tuple<double,double> Pose;
+typedef std::tuple<double, double, double> Theta;
+typedef std::tuple<double, double, double, double> Arm;
 
-    Pos2D& operator=(const Pos2D& target)
-    {
-        x=target.x;
-        y=target.y;
-        return *this;
-    }
+Pose forward_kinematic(Arm l, Theta theta){
 
-    Pos2D operator+(const Pos2D& target) const
-    {
-        return Pos2D(a.x+x, a.y+y);
-    }
+double l0 = std::get<0>(l);
+double l1 = std::get<1>(l);
+double l2 = std::get<2>(l);
+double l3 = std::get<3>(l);
 
-    bool operator==(const Pos2D& target) const
-    {
-        return (x == target.x && y == target.y);
-    }
-};
+double theta0 = std::get<0>(theta);
+double theta1 = std::get<1>(theta);
+double theta2 = std::get<2>(theta); 
 
-Pos2D robot;
-Pos2D target;
+double x = l1 * std::sin(theta0) + l2 * std::sin(theta0+theta1) + l3 * std::sin(theta2); 
+double y = l0 + l1 * std::cos(theta0) + l2 * std::cos(theta0+theta1) + l3 * std::cos(theta2);
 
-template<typename T>
-std::vector<std::vector<T>> getJacobianTranspose(){
+return {x,y};
 
-	auto J_A = cross(rotA, robot - jointA);
-	auto J_B = cross(rotB, robot - jointB);
-	auto J_C = cross(rotC, robot - jointC);
-	
-	Matrix J;
-	//J
-	
-	return J.transpose();
-}
 
-template<typename T>
-std::vector<T> getDeltaOrientation(){
-	
-	auto jt = getJacobianTranspose();
-	auto V = target - robot;
-	auto dO = jt * V;
-	return dO
-	
-}
-
-template<typename T>
-std::vector<T> JacobianIK(T O){
-	
-	while(abs(robot - target) > EPS){
-		
-		dO = getDeltaOrientation();
-		O += dO * H;
-		
-	}
-	
-	return O;
-	
 }
 
 int main() {
+
+int T;
+std::cin >> T;
+
+while(T--){
+
+    int l[4];
+    double theta[3];
+    double denum, num;
+
+    for(int i = 0; i < 4; i++)
+    {
+        int temp;
+        std::cin >> temp;
+        l[i] = temp;
+     }
+    
+    Arm arm = {l[0], l[1], l[2], l[3]};
+    int x, y, phi;    
+    std::cin >> x >> y >> phi;
+    bool found = false;
+    for(double i = -359; i < 360; i++){
+	for(double j = -359; j < 360; j++){
+	   double temp1 = (i*TO_RAD);
+           double temp2 = (j*TO_RAD);
+           double temp3 = (phi*TO_RAD);
+           if(std::isnan(temp1) || std::isnan(temp2)) continue;
+           Theta temp = {temp1, temp2, temp3};
+           Pose res = forward_kinematic(arm, temp);
+           auto X = std::get<0>(res);
+           auto Y = std::get<1>(res);
+           if(std::isnan(X) || std::isnan(Y)) continue;
+           if((std::abs(x-X) < EPS) && (std::abs(y-Y) < EPS)){
+               theta[0] = temp1;
+               theta[1] = temp2;
+               theta[2] = temp3 - (temp1+temp2);
+               if(theta[2]*TO_DEG > 360) continue;
+               else if(theta[2]*TO_DEG < -360) continue;
+	       else{
+                  found = true;
+                  break;
+               }   
+           } 
+	}
+        if(found) break;
+    }
+
+    for(int i = 0; i < 3; i++)
+        theta[i] *= TO_DEG;
+
+    std::cout << std::setprecision(8) << theta[0] << ' ' << theta[1] << ' ' << theta[2] << std::endl;
+
+}
 
 }

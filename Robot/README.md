@@ -10,7 +10,7 @@ A drilling tool is mounted at the end of the last bar of the robot, whose extrem
 
 The first line of the input contains one integer *T*, the number of test cases, followed by *T* test cases.
 
-The first line of each test case contains 4 integers *l*<sub>i<sub> *(i∈0,1,2,3)* the lengths of the bars *(1≤l*<sub>i</sub>*≤3000* and *∑l*<sub>i</sub>*≤l*<sub>0</sub>*)*
+The first line of each test case contains 4 integers *l*<sub>i</sub> *(i∈0,1,2,3)* the lengths of the bars *(1≤l*<sub>i</sub>*≤3000* and *∑l*<sub>i</sub>*≤l*<sub>0</sub>*)*
 
 The second line contains 3 numbers : *X ,Y* and *Z*. *X* and *Y* are denoting the position of the point *q*, and *Z* is described above (*Z* is given in degrees).
 
@@ -36,7 +36,7 @@ Your answer will be considered as correct if it has an absolute or relative erro
 
 ## Hint
 
-This problem could be solved using [inverse kinematics](https://medium.com/unity3danimation/overview-of-jacobian-ik-a33939639ab2).
+This problem could be solved using [inverse kinematics](https://www.seas.upenn.edu/~meam520/notes02/IntroRobotKinematics5.pdf).
 
 ## Source
 
