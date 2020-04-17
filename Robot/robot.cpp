@@ -65,15 +65,35 @@ while(T--){
            auto X = std::get<0>(res);
            auto Y = std::get<1>(res);
            if((std::abs(x-X) <= EPS) && (std::abs(y-Y) <= EPS)){
+
+               if((temp3 - (temp1+temp2))*TO_DEG > 360){
+                 if(((temp1+temp2)*TO_DEG) < -180){
+                    if(std::abs(temp1) > std::abs(temp2)){
+                       temp1 += (360*TO_RAD);
+                    }
+                    else{
+		       temp2 += (360*TO_RAD);
+                    }
+                 }  
+               }
+               else if((temp3 - (temp1+temp2))*TO_DEG < 360){
+                 if(((temp1+temp2)*TO_DEG) > 180){
+                    if(std::abs(temp1) > std::abs(temp2)){
+                       temp1 -= (360*TO_RAD);
+                    }
+                    else{
+		       temp2 -= (360*TO_RAD);
+                    }
+                 }  
+               } 
+
                theta[0] = temp1;
                theta[1] = temp2;
                theta[2] = temp3 - (temp1+temp2);
-               if(theta[2]*TO_DEG > 360) continue;
-               else if(theta[2]*TO_DEG < -360) continue;
-	           else{
-                  found = true;
-                  break;
-               }   
+	         
+               found = true;
+               break;
+             
            } 
 	}
         if(found) break;
