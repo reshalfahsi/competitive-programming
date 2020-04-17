@@ -28,7 +28,7 @@ Your answer will be considered as correct if it has an absolute or relative erro
 20 20 90
 ~~~
 
-## Sampe Output
+## Sample Output
 
 ~~~
 180.00000000 -90.00000000 0.00000000
@@ -36,8 +36,8 @@ Your answer will be considered as correct if it has an absolute or relative erro
 
 ## Hint
 
-This problem could be solved using [inverse kinematics](https://www.seas.upenn.edu/~meam520/notes02/IntroRobotKinematics5.pdf).
+This problem could be solved using [inverse kinematics for 3R Planar](https://www.seas.upenn.edu/~meam520/notes02/IntroRobotKinematics5.pdf) and [inverse kinematics for 2R Planar](https://robohub.org/masterclass-inverse-kinematics-and-robot-motion/)
 
 ## Source
 
-MOI Arena [Robot](http://arena.ioi.ma/problem/mcpc2018robot2)
+MOI Arena's [Robot](http://arena.ioi.ma/problem/mcpc2018robot2)
