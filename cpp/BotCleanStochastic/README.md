@@ -45,6 +45,7 @@ RIGHT
 -----
 -----
 -----
+```
 
 The bot is positioned now at `(0,1)` and is 1 step closer to the dirty cell. The next input will be
 
