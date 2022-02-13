@@ -55,4 +55,9 @@ As you can see, bot is one step closer to the princess.
 Your score for every testcase would be (`NxN` minus number of moves made to rescue the princess)/`10` where `N` is the size of the grid (`5x5` in the sample testcase). Maximum score is `17.5`
 
 ## Hint
+
 Use [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance)!
+
+## Source
+
+Hackerrank [Bot saves princess - 2](https://www.hackerrank.com/challenges/saveprincess2/problem)
