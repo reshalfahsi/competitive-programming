@@ -24,19 +24,19 @@ Assume that these numbers were sampled from a normal distribution; the sample is
 
 ## Mean, Median and Mode
 
-[![Watch the video](https://img.youtube.com/vi/5C9LBF3b65s/maxresdefault.jpg)](https://youtu.be/5C9LBF3b65s)
+[![Watch the video](https://img.youtube.com/vi/5C9LBF3b65s/hqdefault.jpg)](https://youtu.be/5C9LBF3b65s)
 
 
 ## Standard Deviation
 
 
-[![Watch the video](https://img.youtube.com/vi/dq_D30kyR1A/maxresdefault.jpg)](https://youtu.be/dq_D30kyR1A)
+[![Watch the video](https://img.youtube.com/vi/dq_D30kyR1A/hqdefault.jpg)](https://youtu.be/dq_D30kyR1A)
 
 
 ## Confidence Intervals: Getting a bit more serious!
 
 
-[![Watch the video](https://img.youtube.com/vi/tFWsuO9f74o/maxresdefault.jpg)](https://youtu.be/tFWsuO9f74o)
+[![Watch the video](https://img.youtube.com/vi/tFWsuO9f74o/hqdefault.jpg)](https://youtu.be/tFWsuO9f74o)
 
 
 ## Input Format
