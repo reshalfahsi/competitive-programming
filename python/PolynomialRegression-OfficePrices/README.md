@@ -190,6 +190,11 @@ Suppose we have a test case file with just one test. Suppose our expected answer
 
 And your answer is: 9.5
 
+```
 d = (10 - 9.5) / 10 = 0.05
+d_adjusted = max(0.05 - 0.1,0) = 0 Score = max(1-d_adjusted, 0) = max(1,0) = 1
+```
 
-`d_adjusted` = max(0.05 - 0.1,0) = 0 Score = max(1-d_adjusted, 0) = max(1,0) = 1
+## Source
+
+Hackerrank - [Polynomial Regression: Office Prices](https://www.hackerrank.com/challenges/predicting-office-space-price/problem)
