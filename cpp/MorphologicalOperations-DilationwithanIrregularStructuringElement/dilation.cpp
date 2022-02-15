@@ -154,7 +154,7 @@ namespace cv{
         for(int row=0; row < se.rows(); row++){
             for(int col=0; col < se.cols(); col++){
                 if(se[{row, col}] == 1){
-                    auto idx = row * se.rows() + col;
+                    auto idx = row * se.cols() + col;
                     rowSE[idx] = row - row_center; // UP or DOWN
                     colSE[idx] = col - col_center; // LEFT or RIGHT
                 }
@@ -195,7 +195,7 @@ namespace cv{
         for(int row=0; row < se.rows(); row++){
             for(int col=0; col < se.cols(); col++){
                 if(se[{row, col}] == 1){
-                    auto idx = row * se.rows() + col;
+                    auto idx = row * se.cols() + col;
                     rowSE[idx] = row - row_center; // UP or DOWN
                     colSE[idx] = col - col_center; // LEFT or RIGHT
                 }
