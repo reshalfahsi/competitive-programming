@@ -23,6 +23,11 @@ namespace cv{
                 return Vec(data);
             }
             
+            static Vec ones(int shape){
+                _Vec data(shape, 1);
+                return Vec(data);
+            }
+            
             int &operator[](int pos){
                 return _data[pos];
             }
@@ -58,6 +63,13 @@ namespace cv{
                 auto row = get<0>(shape);
                 auto col = get<1>(shape);
                 _Mat data(row, vector<int>(col));
+                return Mat(data);
+            }
+            
+            static Mat ones(_Position shape){
+                auto row = get<0>(shape);
+                auto col = get<1>(shape);
+                _Mat data(row, vector<int>(col, 1));
                 return Mat(data);
             }
             
@@ -142,6 +154,43 @@ namespace cv{
         }
     }
     
+    void erode(Mat img, Mat &eroded, Mat se){
+        
+        assert(se.rows() == se.cols());
+        assert( se.rows() % 2 == 1);
+
+        int center = (se.rows() - 1)/2;
+
+        auto shapeSE = se.rows() * se.cols();
+        auto rowSE = Vec::zeros(shapeSE);
+        auto colSE = Vec::zeros(shapeSE);
+
+        for(int row=0; row < se.rows(); row++){
+            for(int col=0; col < se.cols(); col++){
+                if(se[{row, col}] == 1){
+                    auto idx = row * se.rows() + col;
+                    rowSE[idx] = row - center; // UP or DOWN
+                    colSE[idx] = col - center; // LEFT or RIGHT
+                }
+            }
+        }
+        
+        for(int row=0; row < img.rows(); row++){
+            for(int col=0; col < img.cols(); col++){
+                for(int idx=0; idx < shapeSE; idx++){
+                    if(img[{row, col}] == 0){
+                        auto newcol = col + colSE[idx];
+                        auto newrow = row + rowSE[idx];
+                        if((newcol >= 0) && (newcol < img.cols()) &&
+                            (newrow >= 0) && (newrow < img.rows())){
+                            eroded[{newrow, newcol}] = 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 cv::Mat image ({
@@ -163,18 +212,18 @@ cv::Mat structuringElement ({
 });
 
 
-int main() { 
-    auto dilatedImage = cv::Mat::zeros({image.rows(), image.cols()});
-    cv::dilate(image, dilatedImage, structuringElement);
+int main() {
+    auto erodedImage = cv::Mat::ones({image.rows(), image.cols()});
+    cv::erode(image, erodedImage, structuringElement);
     
     int count = 0;
-    for(int row=0; row < dilatedImage.rows(); row++){
-        for(int col=0; col < dilatedImage.cols(); col++){
-            if(dilatedImage[{row, col}] == 1){
+    for(int row=0; row < erodedImage.rows(); row++){
+        for(int col=0; col < erodedImage.cols(); col++){
+            if(erodedImage[{row, col}] == 1){
                 count++;
             }
         }
     }
-    // cout << dilatedImage << endl;
+    // cout << erodedImage << endl;
     cout << count << endl;
 }
