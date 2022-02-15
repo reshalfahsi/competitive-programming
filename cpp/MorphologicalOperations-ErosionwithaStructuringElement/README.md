@@ -27,3 +27,7 @@ Your answer should look like:
 11111
 00001
 ```
+
+## Source
+
+Hackerrank [Morphological Operations: Erosion with a Structuring Element](https://www.hackerrank.com/challenges/dip-morphological-operations-erosion-with-a-structuring-element/problem)
