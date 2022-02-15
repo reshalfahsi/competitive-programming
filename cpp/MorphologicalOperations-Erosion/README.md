@@ -28,4 +28,4 @@ Alternatively, you may submit a program which computes and displays the required
 
 # Source
 
-Hackerrank - [Morphological Operations: Dilation](https://www.hackerrank.com/challenges/dip-morphological-operations-dilation/problem)
+Hackerrank - [Morphological Operations: Dilation](https://www.hackerrank.com/challenges/dip-morphological-operations-erosion/problem)
