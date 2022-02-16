@@ -40,7 +40,7 @@ Assume that the following board corresponds to cells (i, j) where 1 ≤ i ≤ 4 
 
 At the beginning board is in the following state:
 
-````
+```
 0 0 0 0 0 0 0
 0 0 0 0 0 0 0
 0 0 0 0 0 0 0
