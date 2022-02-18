@@ -13,7 +13,6 @@ func pangrams(s string) string {
     for _, str := range s{
         temp := int(str)
         if temp > 90 { temp -= 32}
-        fmt.Println(str)
         str = rune(byte(temp))
         if str != ' '{
             lookup[str] = 1
