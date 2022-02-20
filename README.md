@@ -7,3 +7,4 @@ Collection of Competitive Programming Problem and Solution. Guaranteed to be `10
 - [C++](cpp)
 - [Go](go)
 - [Python](python)
+- [SQL](sql)
